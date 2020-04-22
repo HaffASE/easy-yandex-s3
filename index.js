@@ -135,7 +135,7 @@ class EasyYandexS3 {
 		
 		var s3 = this.s3;
 		var Bucket = this.Bucket;
-		var params = {Bucket, Key, Body, ContentType: mime.lookup(file_upload_name)}
+		var params = {Bucket, Key, Body, CacheControl: 'max-age=31536000', ContentType: mime.lookup(file_upload_name)}
 
 		if(debug) this._log("S3", debug_object, "started");
 		if(debug) this._log("S3", debug_object, params);
